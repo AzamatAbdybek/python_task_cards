@@ -2,9 +2,20 @@ import random
 import os
 import file_operations
 from faker import Faker
+
+
 fake = Faker("ru_RU")
 
-skills = ["Стремительный прыжок", "Электрический выстрел", "Ледяной удар", "Стремительный удар", "Кислотный взгляд", "Тайный побег", "Ледяной выстрел", "Огненный заряд"]
+    
+skills = [
+    "Стремительный прыжок",
+    "Электрический выстрел",
+    "Ледяной удар",
+    "Стремительный удар",
+    "Кислотный взгляд",
+    "Тайный побег",
+    "Ледяной выстрел",
+    "Огненный заряд"]
 
 
 letters_mapping = {
@@ -33,7 +44,8 @@ letters_mapping = {
     ' ': ' '
 }
 
-if __name__ == "__main__":
+
+def main():
     for i in range(10):
         random_skills = random.sample(skills, 3)
 
@@ -61,4 +73,9 @@ if __name__ == "__main__":
 
         path = "results"
         os.makedirs(path, exist_ok=True)
-        file_operations.render_template("charsheet.svg", f"results/form_{i}.svg", context)
+        file_operations.render_template(
+            "charsheet.svg", f"results/form_{i}.svg", context)
+
+
+if __name__ == "__main__":
+    main()
