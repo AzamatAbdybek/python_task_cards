@@ -3,10 +3,9 @@ import os
 import file_operations
 from faker import Faker
 
-
 fake = Faker("ru_RU")
 
-    
+
 skills = [
     "Стремительный прыжок",
     "Электрический выстрел",
@@ -15,7 +14,8 @@ skills = [
     "Кислотный взгляд",
     "Тайный побег",
     "Ледяной выстрел",
-    "Огненный заряд"]
+    "Огненный заряд"
+]
 
 
 letters_mapping = {
