@@ -3,10 +3,10 @@ import os
 import file_operations
 from faker import Faker
 
-fake = Faker("ru_RU")
+FAKE = Faker("ru_RU")
 
 
-skills = [
+SKILLS = [
     "Стремительный прыжок",
     "Электрический выстрел",
     "Ледяной удар",
@@ -18,7 +18,7 @@ skills = [
 ]
 
 
-letters_mapping = {
+LETTERS_MAPPING = {
     'а': 'а͠', 'б': 'б̋', 'в': 'в͒͠',
     'г': 'г͒͠', 'д': 'д̋', 'е': 'е͠',
     'ё': 'ё͒͠', 'ж': 'ж͒', 'з': 'з̋̋͠',
@@ -47,20 +47,20 @@ letters_mapping = {
 
 def main():
     for i in range(10):
-        random_skills = random.sample(skills, 3)
+        random_skills = random.sample(SKILLS, 3)
 
-        for key, value in letters_mapping.items():
+        for key, value in LETTERS_MAPPING.items():
             random_skills[0] = random_skills[0].replace(key, value)
-        for key, value in letters_mapping.items():
+        for key, value in LETTERS_MAPPING.items():
             random_skills[1] = random_skills[1].replace(key, value)
-        for key, value in letters_mapping.items():
+        for key, value in LETTERS_MAPPING.items():
             random_skills[2] = random_skills[2].replace(key, value)
 
         context = {
-            "first_name": fake.first_name(),
-            "last_name": fake.last_name(),
-            "job": fake.job(),
-            "town": fake.city(),
+            "first_name": FAKE.first_name(),
+            "last_name": FAKE.last_name(),
+            "job": FAKE.job(),
+            "town": FAKE.city(),
             "strength": random.randint(3, 18),
             "agility": random.randint(3, 18),
             "endurance": random.randint(3, 18),
