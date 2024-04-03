@@ -5,7 +5,6 @@ from faker import Faker
 
 FAKE = Faker("ru_RU")
 
-
 SKILLS = [
     "Стремительный прыжок",
     "Электрический выстрел",
@@ -16,7 +15,6 @@ SKILLS = [
     "Ледяной выстрел",
     "Огненный заряд"
 ]
-
 
 LETTERS_MAPPING = {
     'а': 'а͠',
